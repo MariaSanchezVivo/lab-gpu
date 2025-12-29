@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#SBATCH -p bohr-gpu
+#SBATCH --chdir=/home/alumno23
+#SBATCH --output=pi-gpu.out 
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+
+module load anaconda/2025.06
+
+# Ejecutar notebook con valor de N (10^7 y 10^8)
+ipython pi-gpu-alumno23.ipynb 100000000
+
+#Descarga del módulo usado
+module unload anaconda/2025.06
