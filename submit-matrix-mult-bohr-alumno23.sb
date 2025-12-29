@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH -p bohr-gpu 
+#SBATCH --chdir=/home/alumno23 
+#SBATCH --output=extra.out
+#SBATCH --ntasks=1 
+#SBATCH --cpus-per-task=1
+
+module load anaconda/2025.06
+
+# Ejecutar notebook
+ipython matrix-mult-alumno23.ipynb
+
+#Descarga del módulo usado
+module unload anaconda/2025.06
